@@ -13,7 +13,7 @@
             android:id="@+id/university_title1"
             android:layout_width="fill_parent"
             android:layout_height="129.0dip"
-            android:src="@drawable/login_title" />
+            android:src="@drawable/logo2" />
 
         <TextView
             android:id="@+id/title_explain1"
@@ -22,7 +22,7 @@
             android:layout_below="@+id/university_title1"
             android:gravity="center_vertical"
             android:paddingLeft="5dip"
-            android:text="查看宿舍楼空床位："
+            android:text="请填写选择宿舍信息："
             android:textSize="22.0sp" />
 
     </RelativeLayout>
@@ -43,37 +43,106 @@
             android:textColor="#ff8c00"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="17dp" />
+            android:background="@drawable/bk"/>
         <EditText
-            android:hint="办理人信息！"
+            android:hint="办理人！"
             android:layout_width="300.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
             android:textColor="#ff8c00"
+            android:id="@+id/editText"
             android:layout_below="@+id/number"
             android:layout_alignLeft="@+id/number"
             android:layout_alignStart="@+id/number"
-            android:layout_marginTop="35dp"
-            android:id="@+id/editText" />
+            android:background="@drawable/bk"/>
         <EditText
-            android:hint="同住人信息列表！"
-            android:layout_width="300.0dip"
+            android:hint="同住人1学号！"
+            android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
             android:textColor="#ff8c00"
+            android:id="@+id/same_number1"
             android:layout_below="@+id/editText"
-            android:layout_alignLeft="@+id/number"
-            android:layout_alignStart="@+id/number"
-            android:layout_marginTop="35dp"
-            android:id="@+id/same_number" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/bk"/>
+        <EditText
+            android:hint="同住人1效验码！"
+            android:layout_width="190.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ff8c00"
+            android:id="@+id/same_number1_password"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bk"/>
+        <EditText
+            android:hint="同住人2学号！"
+            android:layout_width="190.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ff8c00"
+            android:id="@+id/same_number2"
+            android:background="@drawable/bk"
+            android:layout_below="@+id/same_number1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <EditText
+            android:hint="同住人2效验码！"
+            android:layout_width="190.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ff8c00"
+            android:id="@+id/same_number2_password"
+            android:background="@drawable/bk"
+            android:layout_below="@+id/same_number1_password"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:hint="同住人3学号！"
+            android:layout_width="190.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ff8c00"
+            android:id="@+id/same_number3"
+            android:background="@drawable/bk"
+            android:layout_above="@+id/btn7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <EditText
+            android:hint="同住人3效验码！"
+            android:layout_width="190.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ff8c00"
+            android:id="@+id/same_number3_password"
+            android:background="@drawable/bk"
+            android:layout_below="@+id/same_number2_password"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:hint="楼号！"
+            android:layout_width="190.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ff8c00"
+            android:id="@+id/louhao"
+            android:background="@drawable/bk"
+            android:layout_below="@+id/same_number3_password"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/btn7"
             android:layout_width="150.0dip"
             android:layout_height="wrap_content"
-            android:text="选择宿舍"
+            android:text="确定"
             android:textColor="#000000"
             android:textSize="16dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp" />
     </RelativeLayout>
 </RelativeLayout>

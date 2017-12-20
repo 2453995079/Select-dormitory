@@ -3,66 +3,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
-        android:id="@+id/title"
         android:layout_width="fill_parent"
-        android:layout_height="200.0dip"
-
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:id="@+id/university_title1"
-            android:layout_width="fill_parent"
-            android:layout_height="129.0dip"
-            android:src="@drawable/login_title" />
-
+        android:layout_height="45.0dip"
+        android:background="#ffcd2626"
+        android:id="@+id/title_top">
         <TextView
-            android:id="@+id/title_explain1"
+            android:id="@+id/title_name"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/university_title1"
-            android:gravity="center_vertical"
-            android:paddingLeft="5dip"
-            android:text="功能界面："
-            android:textSize="22.0sp" />
-
+            android:gravity="center"
+            android:text="当前学号：北京"
+            android:textColor="#ffffffff"
+            android:textSize="20.0dip" />
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/base_action_bar_back_normal"
+            />
+        <ImageView
+            android:layout_width="1.0dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@id/title_back"
+            android:background="#A71717"
+            android:gravity="center" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/mid"
+        android:id="@+id/btn"
         android:layout_width="fill_parent"
-        android:layout_height="200.0dip"
-        android:layout_below="@+id/title"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/finall"
-        android:layout_width="fill_parent"
-        android:layout_height="100.0dip"
-        android:layout_below="@+id/mid">
-
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_top">
         <Button
             android:id="@+id/btn2"
-            android:layout_width="130.0dip"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="查询各个宿舍楼的空床位"
             android:textColor="#000000"
-            android:textSize="16dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="31dp"
-            android:layout_marginStart="31dp" />
+            android:textSize="16dp" />
         <Button
             android:id="@+id/btn3"
-            android:layout_width="100.0dip"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:text="选择宿舍"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="27dp"
-            android:layout_marginEnd="27dp" />
+            android:layout_toRightOf="@+id/btn2"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn">
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            />
     </RelativeLayout>
 </RelativeLayout>
