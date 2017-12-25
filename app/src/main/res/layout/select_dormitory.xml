@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
     <RelativeLayout
         android:id="@+id/title"
         android:layout_width="fill_parent"
@@ -34,57 +35,33 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
         <EditText
-            android:id="@+id/number"
-            android:hint="办理人数！"
-            android:numeric="integer"
-            android:layout_width="300.0dip"
-            android:layout_height="50.0dip"
-            android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/bk"/>
-        <EditText
-            android:hint="办理人！"
-            android:layout_width="300.0dip"
-            android:layout_height="50.0dip"
-            android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
-            android:id="@+id/editText"
-            android:layout_below="@+id/number"
-            android:layout_alignLeft="@+id/number"
-            android:layout_alignStart="@+id/number"
-            android:background="@drawable/bk"/>
-        <EditText
             android:hint="同住人1学号！"
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/same_number1"
-            android:layout_below="@+id/editText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="@drawable/bk"/>
+            android:background="@android:drawable/edit_text"/>
         <EditText
             android:hint="同住人1效验码！"
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/same_number1_password"
-            android:layout_below="@+id/editText"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/bk"/>
+            android:background="@android:drawable/edit_text"/>
         <EditText
             android:hint="同住人2学号！"
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/same_number2"
-            android:background="@drawable/bk"
+            android:background="@android:drawable/edit_text"
             android:layout_below="@+id/same_number1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -93,9 +70,9 @@
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/same_number2_password"
-            android:background="@drawable/bk"
+            android:background="@android:drawable/edit_text"
             android:layout_below="@+id/same_number1_password"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -104,10 +81,10 @@
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/same_number3"
-            android:background="@drawable/bk"
-            android:layout_above="@+id/btn7"
+            android:background="@android:drawable/edit_text"
+            android:layout_below="@+id/same_number2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
         <EditText
@@ -115,9 +92,9 @@
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/same_number3_password"
-            android:background="@drawable/bk"
+            android:background="@android:drawable/edit_text"
             android:layout_below="@+id/same_number2_password"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -126,12 +103,11 @@
             android:layout_width="190.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
-            android:textColor="#ff8c00"
+            android:textColor="#03A9F4"
             android:id="@+id/louhao"
-            android:background="@drawable/bk"
-            android:layout_below="@+id/same_number3_password"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="@android:drawable/edit_text"
+            android:layout_below="@+id/same_number3"
+            android:layout_centerHorizontal="true" />
         <Button
             android:id="@+id/btn7"
             android:layout_width="150.0dip"
@@ -139,10 +115,8 @@
             android:text="确定"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_below="@+id/louhao"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="62dp" />
     </RelativeLayout>
 </RelativeLayout>

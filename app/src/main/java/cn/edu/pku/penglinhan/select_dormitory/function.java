@@ -52,7 +52,7 @@ public class function extends Activity implements View.OnClickListener{
     private ImageView btn1;
     private ArrayAdapter<String> adapter;
     private int gender;
-
+    private String number;
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -92,7 +92,7 @@ public class function extends Activity implements View.OnClickListener{
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
         List = (ListView) findViewById(R.id.list);
-        String number=null;
+        number=null;
         Intent intent = getIntent();
         if (intent != null) {
             number = intent.getStringExtra("number");
@@ -112,7 +112,8 @@ public class function extends Activity implements View.OnClickListener{
                 connet2();
                 break;
             case R.id.btn3:
-                Intent i=new Intent(function.this, select.class);
+                Intent i=new Intent(function.this, select_number.class);
+                i.putExtra("number",number);
                 startActivity(i);
                 break;
             default:
@@ -271,7 +272,7 @@ public class function extends Activity implements View.OnClickListener{
             } else if (sring[i].equals("8")) {i=i+1;
                 room.setroom8(sring[i].substring(1,sring[i].length()));
             } else if (sring[i].equals("9")) {i=i+1;
-                room.setroom9(sring[i].substring(1,sring[i].length()));
+                room.setroom9(sring[i].substring(1,sring[i].length()-2));
             }
         }
         return room;

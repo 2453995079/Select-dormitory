@@ -111,7 +111,6 @@ public class Lodin extends Activity implements View.OnClickListener{
                     Intent i=new Intent(Lodin.this, function.class);
                     Log.d("abc",number.getText().toString());
                     i.putExtra("number",number.getText().toString());
-
                     startActivity(i);
                     }else {
                         Log.d("abc","为什么");

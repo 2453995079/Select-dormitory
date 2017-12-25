@@ -28,7 +28,7 @@ import javax.net.ssl.SSLSession;
 import cn.edu.pku.penglinhan.select_dormitory.room.room;
 import cn.edu.pku.penglinhan.select_dormitory.student.student;
 import cn.edu.pku.penglinhan.select_dormitory.util.NetUtil;
-
+import android.graphics.Color;
 /**
  * Created by Administrator on 2017/12/20 0020.
  */
@@ -37,14 +37,18 @@ public class select extends Activity implements View.OnClickListener{
     private static final int UPDATE_TODAY_WEATHER = 1;/*与线程有关*/
     private Button btn7;
     private Logger logger;
-    private TextView number,num,t1_1,t1_2,t2_1,t2_2,t3_1,t3_2,louhao;
+    private TextView t1_1,t1_2,t2_1,t2_2,t3_1,t3_2,louhao;
+    private String number,xuehao;
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case UPDATE_TODAY_WEATHER:
                     String www = (String) msg.obj;
-                    if(www.equals("{\"errcode\":0}"))
-                        finish();
+                    if(www.equals("{\"errcode\":0}")) {
+                        Intent i=new Intent(select.this, function.class);
+                        i.putExtra("number",xuehao);
+                        startActivity(i);
+                    }
                     else {
                         new AlertDialog.Builder(select.this).setTitle("提示").setMessage("填写错误").setPositiveButton("返回", null).show();
                     }
@@ -70,8 +74,6 @@ public class select extends Activity implements View.OnClickListener{
         initView();
     }
     private void initView() {
-        number = (TextView) findViewById(R.id.number);
-        num = (TextView) findViewById(R.id.editText);
         t1_1 = (TextView) findViewById(R.id.same_number1);
         t1_2 = (TextView) findViewById(R.id.same_number1_password);
         t2_1 = (TextView) findViewById(R.id.same_number2);
@@ -79,6 +81,13 @@ public class select extends Activity implements View.OnClickListener{
         t3_1 = (TextView) findViewById(R.id.same_number3);
         t3_2 = (TextView) findViewById(R.id.same_number3_password);
         louhao = (TextView) findViewById(R.id.louhao);
+        Intent intent = getIntent();
+        if (intent != null) {xuehao = intent.getStringExtra("xuehao");number = intent.getStringExtra("number");}
+        if(number.equals("1")){
+            t2_1.setEnabled(false);t2_2.setEnabled(false);t3_1.setEnabled(false);t3_2.setEnabled(false);
+            t2_1.setBackgroundColor(Color.parseColor("#5B5B5B"));t2_2.setBackgroundColor(Color.parseColor("#5B5B5B"));t3_1.setBackgroundColor(Color.parseColor("#5B5B5B"));t3_2.setBackgroundColor(Color.parseColor("#5B5B5B"));
+        }
+        else if(number.equals("2")){t3_1.setEnabled(false);t3_2.setEnabled(false);t3_1.setBackgroundColor(Color.parseColor("#5B5B5B"));t3_2.setBackgroundColor(Color.parseColor("#5B5B5B"));}
     }
     @Override
     public void onClick(View view) {
@@ -116,7 +125,6 @@ public class select extends Activity implements View.OnClickListener{
                     con.setConnectTimeout(8000);
                     con.setDoInput(true);                  //打开输入流，以便从服务器获取数据
                     con.setDoOutput(true);                 //打开输出流，以便向服务器提交数据
-                    con.setRequestMethod("POST");     //设置以Post方式提交数据
                     con.setUseCaches(false);
                     OutputStream outputStream = con.getOutputStream();
                     outputStream.write(data);
@@ -159,14 +167,26 @@ public class select extends Activity implements View.OnClickListener{
     public StringBuffer getRequestData() {
         StringBuffer stringBuffer = new StringBuffer();        //存储封装好的请求体信息
         try {
-            stringBuffer.append("num").append("=").append(number.getText().toString()).append("&");
-            stringBuffer.append("stuid").append("=").append(num.getText().toString()).append("&");
+            stringBuffer.append("num").append("=").append(number).append("&");
+            stringBuffer.append("stuid").append("=").append(xuehao).append("&");
             stringBuffer.append("stu1id").append("=").append(t1_1.getText().toString()).append("&");
             stringBuffer.append("v1code").append("=").append(t1_2.getText().toString()).append("&");
+            if(number.equals("1")){
+                stringBuffer.append("stu2id").append("=").append("").append("&");
+                stringBuffer.append("v2code").append("=").append("").append("&");
+                stringBuffer.append("stu3id").append("=").append("").append("&");
+                stringBuffer.append("v3code").append("=").append("").append("&");
+            }
+            else if(number.equals("2")){
+                stringBuffer.append("stu2id").append("=").append(t2_1.getText().toString()).append("&");
+                stringBuffer.append("v2code").append("=").append(t2_2.getText().toString()).append("&");
+                stringBuffer.append("stu3id").append("=").append("").append("&");
+                stringBuffer.append("v3code").append("=").append("").append("&");}
+            else{
             stringBuffer.append("stu2id").append("=").append(t2_1.getText().toString()).append("&");
             stringBuffer.append("v2code").append("=").append(t2_2.getText().toString()).append("&");
             stringBuffer.append("stu3id").append("=").append(t3_1.getText().toString()).append("&");
-            stringBuffer.append("v3code").append("=").append(t3_2.getText().toString()).append("&");
+            stringBuffer.append("v3code").append("=").append(t3_2.getText().toString()).append("&");}
             stringBuffer.append("buildingNo").append("=").append(louhao.getText().toString()).append("&");
             stringBuffer.deleteCharAt(stringBuffer.length() - 1);    //删除最后的一个"&"
         } catch (Exception e) {

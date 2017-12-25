@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".function"></activity>/*注册select.java*/
         <activity android:name=".select"></activity>/*注册select.java*/
+        <activity android:name=".select_number"></activity>/*注册select.java*/
     </application>
 
 </manifest>

@@ -1,7 +1,7 @@
 package cn.edu.pku.penglinhan.select_dormitory;
 
 /**
- * Created by Administrator on 2017/12/19 0019.
+ * Created by Administrator on 2017/12/25 0025.
  */
 
 class miTM implements javax.net.ssl.TrustManager, javax.net.ssl.X509TrustManager {
@@ -27,3 +27,4 @@ class miTM implements javax.net.ssl.TrustManager, javax.net.ssl.X509TrustManager
         return;
     }
 }
+
