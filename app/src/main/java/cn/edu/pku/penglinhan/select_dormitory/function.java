@@ -53,6 +53,7 @@ public class function extends Activity implements View.OnClickListener{
     private ArrayAdapter<String> adapter;
     private int gender;
     private String number;
+    private TextView textview;
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -92,12 +93,14 @@ public class function extends Activity implements View.OnClickListener{
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
         List = (ListView) findViewById(R.id.list);
+        textview = (TextView) findViewById(R.id.title_name);
         number=null;
         Intent intent = getIntent();
         if (intent != null) {
             number = intent.getStringExtra("number");
         }
         Log.d("ab", number);
+        textview.setText("当前学号："+number);
         connet1(number);
     }
 
